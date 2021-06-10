@@ -1,8 +1,8 @@
 import Config
 
-config :customers, Customers.Repo,
+config :day8_csv, Customers.Repo,
   database: "customers_repo",
   username: "postgres",
   password: "postgres",
   hostname: "localhost"
-config :customers, ecto_repos: [Customers.Repo]
+config :day8_csv, ecto_repos: [Customers.Repo]
