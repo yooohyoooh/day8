@@ -58,11 +58,12 @@ defmodule Customer do
     data_list = String.split(data, "\r\n")
 
     #head：["取引先番号,取引先名称...""] tail：それ以降の各レコードが入ったリスト
-    head = hd(data_list)
+    # head = hd(data_list)
+    keys = [:number, :name, :score, :address]
     tail = tl(data_list)
 
     #headを分割してリスト化
-    keys = String.split(head,",")
+    # keys = String.split(head,",")
 
     for i <- tail do
       data = String.split(i, ",")

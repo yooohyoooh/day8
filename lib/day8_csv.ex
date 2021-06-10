@@ -1,14 +1,15 @@
 defmodule Day8Csv do
   def main do
-    file_name = "CUSTOMER.csv"
-    list = Customer.read_file(file_name)
-    insertList(list)
+    "CUSTOMER.csv"
+    |> Customer.read_file()
+    |> insertData()
   end
 
-  def insertList(list) do
+  def insertData(data) do
     customer = %Customers.Customer{}
-    Enum.map(list, fn x ->
+    Enum.each(data, fn x ->
       Customers.Customer.changeset(customer, x)
+      |> Customers.Repo.insert()
     end)
   end
 
